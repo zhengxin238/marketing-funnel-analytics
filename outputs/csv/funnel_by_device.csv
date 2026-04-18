@@ -1,0 +1,16 @@
+segment,step,users
+desktop,page_view,156688
+desktop,view_item,35678
+desktop,add_to_cart,7271
+desktop,begin_checkout,5610
+desktop,purchase,2534
+mobile,page_view,107034
+mobile,view_item,24170
+mobile,add_to_cart,4998
+mobile,begin_checkout,3895
+mobile,purchase,1793
+tablet,page_view,6070
+tablet,view_item,1404
+tablet,add_to_cart,276
+tablet,begin_checkout,210
+tablet,purchase,92

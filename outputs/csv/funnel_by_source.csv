@@ -1,0 +1,26 @@
+segment,step,users
+(data deleted),page_view,7290
+(data deleted),view_item,3416
+(data deleted),add_to_cart,1056
+(data deleted),begin_checkout,909
+(data deleted),purchase,593
+(direct),page_view,63433
+(direct),view_item,14099
+(direct),add_to_cart,2952
+(direct),begin_checkout,2186
+(direct),purchase,975
+<Other>,page_view,78524
+<Other>,view_item,16770
+<Other>,add_to_cart,3269
+<Other>,begin_checkout,2463
+<Other>,purchase,1015
+google,page_view,103487
+google,view_item,22197
+google,add_to_cart,4132
+google,begin_checkout,3187
+google,purchase,1307
+shop.googlemerchandisestore.com,page_view,17058
+shop.googlemerchandisestore.com,view_item,4770
+shop.googlemerchandisestore.com,add_to_cart,1136
+shop.googlemerchandisestore.com,begin_checkout,970
+shop.googlemerchandisestore.com,purchase,529
