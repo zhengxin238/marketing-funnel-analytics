@@ -84,6 +84,7 @@ Uses **Google Application Default Credentials (ADC)** via environment variable:
 
 ```bash
 setx GOOGLE_APPLICATION_CREDENTIALS "path_to_your_json"
+
 ---
 
 ## 🧠 Skills Demonstrated
