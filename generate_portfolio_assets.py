@@ -66,11 +66,24 @@ User-level funnel aggregation:
 
 ## 📊 Outputs
 
-- raw_events.csv → user-level behavior
-- funnel_overview.csv → global funnel KPIs
-- funnel_by_device.csv → device performance
-- funnel_by_source.csv → channel performance
+All outputs are generated in `outputs/csv/` and are ready for BI tools like Tableau.
 
+- **raw_events.csv** → user-level dataset containing funnel stage flags, device, source, and first-touch timestamp  
+- **funnel_overview.csv** → aggregated funnel metrics (total users per stage + drop-off analysis)  
+- **funnel_over_time.csv** → daily funnel activity to analyze trends over time  
+- **funnel_by_device.csv** → conversion performance segmented by device category  
+- **funnel_by_source.csv** → conversion performance segmented by traffic source  
+- **conversion_rate.csv** → overall funnel conversion rate (purchase / page view)  
+- **cohort_retention.csv** → cohort-based retention analysis (user engagement over time)  
+
+---
+
+## 🔐 Authentication
+
+Uses **Google Application Default Credentials (ADC)** via environment variable:
+
+```bash
+setx GOOGLE_APPLICATION_CREDENTIALS "path_to_your_json"
 ---
 
 ## 🧠 Skills Demonstrated

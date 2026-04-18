@@ -1,86 +1,138 @@
 
-# 📊 Marketing Funnel Analytics Architecture
+# 📊 Marketing Funnel Analytics Pipeline — Architecture Overview
 
-## 🧱 System Overview
+## 🧱 1. System Overview
 
-This project implements an end-to-end analytics pipeline for ecommerce funnel analysis using GA4 BigQuery data.
+This project implements an end-to-end data analytics pipeline that transforms raw GA4 ecommerce event data into BI-ready datasets for funnel, segmentation, and cohort analysis.
 
----
-
-## 🔄 Data Pipeline Flow
-
-### 1. Data Source
-- Google BigQuery (GA4 ecommerce dataset)
-- Raw event-level user interactions
+The system is designed to support marketing and product decision-making through scalable and modular data processing.
 
 ---
 
-### 2. Extraction Layer
-- Python (BigQuery Client)
-- Loads raw event data into pandas DataFrame
+## 🔄 2. Data Pipeline Flow
+
+**BigQuery (GA4 Dataset) → Python ETL → Transformation Layer → Aggregated Metrics → CSV Outputs → Tableau Dashboards**
 
 ---
 
-### 3. Transformation Layer
-- Pandas-based processing
-- Converts event-level data → user-level funnel stages
+## 🗄️ 3. Data Source Layer
 
-Funnel stages:
-- page_view
-- view_item
-- add_to_cart
-- begin_checkout
-- purchase
-
----
-
-### 4. Segmentation Layer
-- Device segmentation (mobile / desktop)
-- Traffic source segmentation (google / direct / email)
+- Google BigQuery public GA4 ecommerce dataset
+- Event-level user interaction data
+- Includes behavioral events such as:
+  - page_view
+  - view_item
+  - add_to_cart
+  - begin_checkout
+  - purchase
 
 ---
 
-### 5. Output Layer (BI Ready)
-Generated CSV files:
-- raw_events.csv
-- funnel_overview.csv
-- funnel_by_device.csv
-- funnel_by_source.csv
-- architecture_overview.md
+## ⚙️ 4. Extraction Layer (Python + BigQuery)
+
+- Uses Google Cloud BigQuery client
+- Extracts raw event data into pandas DataFrames
+- Handles authentication via environment variables (ADC)
 
 ---
 
-### 6. Visualization Layer (Tableau)
-Dashboards built on exported CSVs:
-- Funnel conversion analysis
-- Device performance comparison
-- Channel attribution analysis
+## 🔄 5. Transformation Layer (Python ETL)
+
+Transforms raw event data into analytical structures:
+
+### Funnel Modeling
+- Converts event-level data → user-level funnel states
+- Tracks user progression through conversion steps
+
+### Funnel Stages
+- Page View
+- Product View
+- Add to Cart
+- Checkout
+- Purchase
 
 ---
 
-## 🎯 Business Objective
+## 📊 6. Segmentation Layer
 
-The goal of this pipeline is to:
+Enables multi-dimensional analysis:
 
-- Identify funnel drop-off points
-- Measure conversion efficiency
-- Compare performance across segments
-- Support data-driven marketing optimization
+### Device Segmentation
+- Desktop
+- Mobile
+- Tablet
 
----
-
-## 📈 Key Insight Areas
-
-- Largest drop-off occurs before purchase
-- Mobile users convert lower than desktop users
-- Acquisition channel quality varies significantly
+### Traffic Source Segmentation
+- Organic search
+- Direct traffic
+- Referral / campaigns
 
 ---
 
-## 🧠 Skills Demonstrated
+## 📦 7. Output Layer (BI-Ready Data)
 
-- SQL-based funnel modeling
+All outputs are stored in `outputs/csv/` and optimized for Tableau:
+
+- raw_events.csv → enriched user-level dataset
+- funnel_overview.csv → overall funnel KPIs
+- funnel_over_time.csv → time-based funnel trends
+- funnel_by_device.csv → device performance comparison
+- funnel_by_source.csv → channel attribution analysis
+- conversion_rate.csv → global conversion metric
+- cohort_retention.csv → user retention over time
+
+---
+
+## 📈 8. Visualization Layer (Tableau)
+
+The exported datasets power interactive dashboards:
+
+- Funnel drop-off visualization
+- Conversion rate analysis
+- Device vs performance comparison
+- Channel attribution breakdown
+- Cohort retention heatmaps
+
+---
+
+## 🎯 9. Business Objective
+
+This pipeline is designed to answer key business questions:
+
+- Where do users drop off in the funnel?
+- Which acquisition channels drive the highest conversion?
+- How does device type impact conversion rates?
+- How does user retention evolve over time?
+
+---
+
+## 📌 10. Key Insights Enabled
+
+- Significant drop-off between product view and checkout stages
+- Mobile users show lower conversion rates than desktop users
+- Traffic sources vary significantly in conversion efficiency
+- Retention declines sharply after first interaction
+
+---
+
+## 🧠 11. Skills Demonstrated
+
+This project demonstrates:
+
+- Advanced SQL funnel modeling
 - Python ETL pipeline design
-- Segmented behavioral analytics
-- BI-ready dataset engineering
-- Business storytelling through data
+- BigQuery data extraction
+- Behavioral segmentation analysis
+- Cohort retention analysis
+- BI dashboard readiness (Tableau)
+- Data storytelling for business impact
+
+---
+
+## 🚀 12. Design Principles
+
+- Modular architecture
+- Separation of concerns (SQL / ETL / analysis / visualization)
+- Reusable query structure
+- Scalable analytics pipeline
+- Production-style data workflow

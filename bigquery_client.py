@@ -1,12 +1,9 @@
 from google.cloud import bigquery
-from config import PROJECT_ID, SERVICE_ACCOUNT_FILE
 
 
 def get_bigquery_client():
-    return bigquery.Client.from_service_account_json(
-        SERVICE_ACCOUNT_FILE,
-        project=PROJECT_ID
-    )
+    # Uses environment variable (best practice)
+    return bigquery.Client()
 
 
 def main():
