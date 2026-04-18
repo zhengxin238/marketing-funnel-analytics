@@ -67,10 +67,7 @@ All outputs are generated in `outputs/csv/` and are ready for BI tools like Tabl
 
 ## 🔐 Authentication
 
-Uses **Google Application Default Credentials (ADC)** via environment variable:
-
-```bash
-setx GOOGLE_APPLICATION_CREDENTIALS "path_to_your_json"
+Uses **Google Application Default Credentials (ADC)** via environment variable
 
 ---
 
