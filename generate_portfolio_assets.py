@@ -17,7 +17,7 @@ README_CONTENT = """# 📊 Marketing Funnel Analytics Pipeline (GA4 + BigQuery +
 
 ## 🚀 Overview
 
-This project analyzes user behavior across a full ecommerce funnel using GA4 event data.
+This project analyzed GA4 ecommerce event data (270K+ user sessions) to identify funnel drop-off points and optimize conversion performance using Python and BigQuery.
 
 End-to-end marketing funnel analytics project using GA4 BigQuery data.
 
@@ -44,6 +44,35 @@ We need to quantify:
 
 ---
 
+## 🔍 Key Findings
+
+- Largest drop-off occurs between View Item → Add to Cart (~80% loss)
+- Overall conversion rate is ~1.6%
+- Mobile users convert less than desktop users
+- Google is the strongest traffic source
+
+---
+
+## 📊 Funnel Performance
+
+- Page Views: 269,792  
+- Product Views: 61,252  
+- Add to Cart: 12,545  
+- Checkout: 9,715  
+- Purchases: 4,419  
+
+Overall Conversion Rate: ~1.6%
+
+---
+
+## 💡 Recommendations
+
+- Improve product page engagement (images, pricing clarity)
+- Simplify checkout flow to reduce drop-off
+- Optimize mobile experience
+- Focus budget on high-converting traffic sources
+
+---
 
 ## 🏗️ Approach
 
@@ -86,6 +115,11 @@ Uses **Google Application Default Credentials (ADC)** via environment variable
 
 ## 🧠 Skills Demonstrated
 
+- Built end-to-end GA4 funnel analytics pipeline
+- Performed user segmentation and conversion analysis
+- Created BI-ready datasets for Tableau dashboards
+
+with
 ✔ SQL funnel modeling  
 ✔ Python ETL pipeline  
 ✔ Segmented behavioral analysis  
