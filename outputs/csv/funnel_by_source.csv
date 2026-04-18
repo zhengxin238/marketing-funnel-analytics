@@ -1,4 +1,6 @@
-source,users
-google,500
-direct,300
-email,200
+source,page_view,purchase,conversion_rate
+google,474525,1620,0.0034139402560455193
+<Other>,355998,1290,0.003623615863010466
+(direct),311461,1251,0.004016554239535608
+(data deleted),94898,830,0.008746232797319228
+shop.googlemerchandisestore.com,113546,701,0.006173709333662128

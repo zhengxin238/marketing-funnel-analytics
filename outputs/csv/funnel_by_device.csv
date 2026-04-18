@@ -1,3 +1,4 @@
-device,users
-mobile,600
-desktop,400
+device,page_view,purchase,conversion_rate
+desktop,785768,3226,0.0041055375123446106
+mobile,535310,2355,0.004399320020175225
+tablet,29350,111,0.0037819420783645656

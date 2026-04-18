@@ -1,6 +1,2 @@
-step,users
-page_view,1000
-view_item,700
-add_to_cart,400
-begin_checkout,250
-purchase,120
+page_view,view_item,add_to_cart,begin_checkout,purchase
+269792,61252,12545,9715,4419

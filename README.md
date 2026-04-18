@@ -1,46 +1,53 @@
-# 📊 Marketing Funnel Analytics Pipeline (GA4 + BigQuery + Python + Tableau)
+# 📊 Marketing Funnel Analytics Pipeline (GA4 + BigQuery + Python)
 
+---
 
+## 🚀 Executive Summary
 
-## 🚀 Overview
+This project analyzes **270K+ GA4 ecommerce sessions** to identify user drop-off points, optimize marketing performance, and improve conversion efficiency.
 
-This project analyzed GA4 ecommerce event data (270K+ user sessions) to identify funnel drop-off points and optimize conversion performance using Python and BigQuery.
-
-End-to-end marketing funnel analytics project using GA4 BigQuery data.
-
-Pipeline:
-BigQuery → Python ETL → Funnel Modeling → Segmentation → Tableau-ready CSVs
-
-It identifies:
-- Where users drop off
-- Which channels convert best
-- How device behavior impacts conversion
+Using BigQuery and Python, I built an end-to-end analytics pipeline that transforms raw event data into actionable business insights.
 
 ---
 
 ## 🎯 Business Problem
 
-The company is losing users between:
-- Product view → Add to cart
+The ecommerce platform is losing users at critical funnel stages:
+
+- Product View → Add to Cart
+- Add to Cart → Checkout
 - Checkout → Purchase
 
-We need to quantify:
-1. Funnel drop-off points
-2. Conversion rates per stage
-3. Segment performance (device + source)
+This project answers:
+
+- Where do users drop off?
+- Which channels bring high-quality traffic?
+- How do devices affect conversion?
+- What drives revenue loss in the funnel?
 
 ---
 
-## 🔍 Key Findings
+## 📊 Key Insights
 
-- Largest drop-off occurs between View Item → Add to Cart (~80% loss)
-- Overall conversion rate is ~1.6%
-- Mobile users convert less than desktop users
-- Google is the strongest traffic source
+### 🔻 Funnel Drop-off
+- Largest drop-off occurs at **View Item → Add to Cart**
+- Only a small fraction of users reach checkout
+
+### 💰 Conversion Performance
+- Overall conversion rate: ~1.6%
+- Strong leakage before checkout stage
+
+### 📱 Device Behavior
+- Desktop users convert significantly better than mobile users
+- Mobile funnel shows higher friction
+
+### 🌐 Traffic Sources
+- Google is the highest-quality traffic source
+- Some sources drive volume but low conversion
 
 ---
 
-## 📊 Funnel Performance
+## 📉 Funnel Summary
 
 - Page Views: 269,792  
 - Product Views: 61,252  
@@ -48,83 +55,62 @@ We need to quantify:
 - Checkout: 9,715  
 - Purchases: 4,419  
 
-Overall Conversion Rate: ~1.6%
+---
+
+## 💡 Business Recommendations
+
+- Improve product page engagement (images, UX, pricing clarity)
+- Reduce friction in add-to-cart flow
+- Optimize mobile checkout experience
+- Reallocate marketing budget toward high-converting sources
+- Improve retargeting for cart abandoners
 
 ---
 
-## 💡 Recommendations
-
-- Improve product page engagement (images, pricing clarity)
-- Simplify checkout flow to reduce drop-off
-- Optimize mobile experience
-- Focus budget on high-converting traffic sources
-
----
-
-## 🏗️ Approach
+## 🏗️ Methodology
 
 ### 1. Data Source
-GA4 BigQuery public dataset
+- Google Analytics 4 BigQuery public dataset
 
-### 2. Transformation Logic
-User-level funnel aggregation:
-- page_view
-- view_item
-- add_to_cart
-- begin_checkout
-- purchase
+### 2. Pipeline Design
+BigQuery → Python ETL → Funnel Modeling → Segmentation → BI Outputs
 
-### 3. Segmentation
-- Device (mobile vs desktop)
-- Traffic source (google, direct, email)
+### 3. Analysis Layers
+- Funnel analysis (conversion + drop-off)
+- Device segmentation
+- Traffic source analysis
+- Cohort retention behavior
 
 ---
 
-## 📊 Outputs
+## 📊 Outputs Generated
 
-All outputs are generated in `outputs/csv/` and are ready for BI tools like Tableau.
+All outputs are exported as BI-ready datasets:
 
-- **raw_events.csv** → user-level dataset containing funnel stage flags, device, source, and first-touch timestamp  
-- **funnel_overview.csv** → aggregated funnel metrics (total users per stage + drop-off analysis)  
-- **funnel_over_time.csv** → daily funnel activity to analyze trends over time  
-- **funnel_by_device.csv** → conversion performance segmented by device category  
-- **funnel_by_source.csv** → conversion performance segmented by traffic source  
-- **conversion_rate.csv** → overall funnel conversion rate (purchase / page view)  
-- **cohort_retention.csv** → cohort-based retention analysis (user engagement over time)  
-
----
-
-## 🔐 Authentication
-
-Uses **Google Application Default Credentials (ADC)** via environment variable
+- raw_events.csv → user-level funnel data  
+- funnel_overview.csv → funnel performance summary  
+- funnel_over_time.csv → trend analysis  
+- funnel_by_device.csv → device segmentation  
+- funnel_by_source.csv → marketing channel analysis  
+- cohort_retention.csv → user retention behavior  
+- kpis.csv → executive dashboard metrics  
+- insights.csv → business interpretation layer  
 
 ---
 
 ## 🧠 Skills Demonstrated
 
-- Built end-to-end GA4 funnel analytics pipeline
-- Performed user segmentation and conversion analysis
-- Created BI-ready datasets for Tableau dashboards
-
-with
-
-✔ SQL funnel modeling  
-✔ Python ETL pipeline  
-✔ Segmented behavioral analysis  
-✔ KPI design (conversion + drop-off)  
-✔ BI-ready dataset creation  
-✔ Business storytelling  
+- End-to-end GA4 funnel analytics pipeline
+- BigQuery SQL for behavioral data extraction
+- Python-based ETL and transformation logic
+- Marketing funnel and conversion analysis
+- Cohort retention modeling
+- Business insight generation from raw data
+- BI-ready dataset engineering
 
 ---
 
 ## 🚀 How to Run
 
-Run the script:
-
+```bash
 python main.py
-
----
-
-## 👤 Author
-
-Xin Zheng

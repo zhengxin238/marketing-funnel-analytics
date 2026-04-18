@@ -1,4 +1,4 @@
-date,page,view,cart,purchase
+date,page_view,view_item,add_to_cart,purchase
 2020-11-01,9767,3380,4,14
 2020-11-02,14964,4935,0,49
 2020-11-03,18665,5790,0,49
