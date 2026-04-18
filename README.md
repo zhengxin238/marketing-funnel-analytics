@@ -107,6 +107,7 @@ Uses **Google Application Default Credentials (ADC)** via environment variable
 - Created BI-ready datasets for Tableau dashboards
 
 with
+
 ✔ SQL funnel modeling  
 ✔ Python ETL pipeline  
 ✔ Segmented behavioral analysis  
