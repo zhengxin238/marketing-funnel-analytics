@@ -83,6 +83,53 @@ BigQuery → Python ETL → Funnel Modeling → Segmentation → BI Outputs
 
 ---
 
+## 🤖 AI-Powered Insight Generation
+
+This project includes an AI layer that automatically generates business insights from processed data.
+
+### 🧠 Purpose
+The AI component transforms raw analytics outputs into structured, business-ready reports by:
+
+- Detecting funnel drop-offs  
+- Identifying anomalies and tracking issues  
+- Generating executive summaries  
+- Translating data into actionable insights  
+
+### ⚙️ How It Works
+After the pipeline runs:
+
+- Cleaned datasets are passed into the AI engine  
+- Structured prompts guide the AI to behave like a **senior data analyst**  
+- The system generates:
+  - `funnel_insights.txt`  
+  - `executive_summary.txt`  
+  - `anomaly_report.txt`
+
+### 🧩 Prompt Engineering Approach
+The AI is guided using structured prompts that enforce:
+
+- Business-focused reasoning (not just description)  
+- Prioritization of critical issues  
+- Clear distinction between technical vs behavioral anomalies  
+- Actionable recommendations  
+- Awareness of data quality limitations  
+
+### 🚨 Data Quality Awareness
+The AI layer is integrated with a data quality system:
+
+- Detects tracking failures (e.g. missing `add_to_cart`)  
+- Uses repaired metrics (`effective_add_to_cart`) when necessary  
+- Warns when data is unreliable  
+
+This ensures insights are **context-aware and trustworthy**.
+
+### 🎯 Value
+This transforms the pipeline from:
+
+**Data processing → Automated decision-support system**
+
+---
+
 ## 📊 Outputs Generated
 
 All outputs are exported as BI-ready datasets:
@@ -100,13 +147,14 @@ All outputs are exported as BI-ready datasets:
 
 ## 🧠 Skills Demonstrated
 
-- End-to-end GA4 funnel analytics pipeline
-- BigQuery SQL for behavioral data extraction
-- Python-based ETL and transformation logic
-- Marketing funnel and conversion analysis
-- Cohort retention modeling
-- Business insight generation from raw data
-- BI-ready dataset engineering
+- End-to-end GA4 funnel analytics pipeline  
+- BigQuery SQL for behavioral data extraction  
+- Python-based ETL and transformation logic  
+- Marketing funnel and conversion analysis  
+- Cohort retention modeling  
+- AI-assisted insight generation (prompt engineering)  
+- Data storytelling and automated reporting  
+- BI-ready dataset engineering  
 
 ---
 

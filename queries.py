@@ -71,14 +71,46 @@ def get_funnel_overview_query():
 # -------------------------
 def get_funnel_over_time_query():
     return """
-    SELECT
-      DATE(TIMESTAMP_MICROS(event_timestamp)) AS date,
-      COUNTIF(event_name = 'page_view') AS page_view,
-      COUNTIF(event_name = 'view_item') AS view_item,
-      COUNTIF(event_name = 'add_to_cart') AS add_to_cart,
-      COUNTIF(event_name = 'purchase') AS purchase
-    FROM `bigquery-public-data.ga4_obfuscated_sample_ecommerce.events_*`
-    GROUP BY date
+    WITH base AS (
+      SELECT
+        DATE(TIMESTAMP_MICROS(event_timestamp)) AS date,
+        event_name,
+        user_pseudo_id
+      FROM `bigquery-public-data.ga4_obfuscated_sample_ecommerce.events_*`
+    ),
+
+    aggregated AS (
+      SELECT
+        date,
+        COUNTIF(event_name = 'page_view') AS page_view,
+        COUNTIF(event_name = 'view_item') AS view_item,
+        COUNTIF(event_name = 'add_to_cart') AS add_to_cart,
+        COUNTIF(event_name = 'purchase') AS purchase
+      FROM base
+      GROUP BY date
+    ),
+
+    corrected AS (
+      SELECT
+        *,
+
+        -- 🚨 flag broken tracking
+        CASE
+          WHEN add_to_cart = 0 AND purchase > 0 THEN TRUE
+          ELSE FALSE
+        END AS cart_tracking_broken,
+
+        -- 🧠 fallback estimation
+        CASE
+          WHEN add_to_cart = 0 AND purchase > 0
+          THEN purchase * 2   -- simple heuristic (can explain in interview)
+          ELSE add_to_cart
+        END AS effective_add_to_cart
+
+      FROM aggregated
+    )
+
+    SELECT * FROM corrected
     ORDER BY date
     """
 
